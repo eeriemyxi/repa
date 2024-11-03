@@ -215,9 +215,9 @@ void process_file(struct File *file) {
     result.raw_sp_counter += result.space_counter;
     result.raw_nl_counter += result.line_counter;
 
-    printf("🔹" LIGHT_GREEN "Total Lines" LIGHT_CYAN ": %d (" LIGHT_BLUE "%d" RESET ")\n",
+    printf("🔹" LIGHT_GREEN "Total Lines: " LIGHT_CYAN "%d " RESET "(" LIGHT_BLUE "%d" RESET ")\n",
            result.raw_nl_counter, result.line_counter);
-    printf("🔹" LIGHT_GREEN "Total Spaces" LIGHT_CYAN ": %d (" LIGHT_BLUE "%d" RESET
+    printf("🔹" LIGHT_GREEN "Total Spaces: " LIGHT_CYAN " %d " RESET "(" LIGHT_BLUE "%d" RESET
            ")\n",
            result.raw_sp_counter, result.space_counter);
 
