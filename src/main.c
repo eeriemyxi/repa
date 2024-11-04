@@ -271,10 +271,10 @@ int main(int argc, char *argv[]) {
             continue;
         }
 
-		if (Options.APPEND_CWD == true) {
+        if (Options.APPEND_CWD == true) {
             strcat(file_path, Options.CWD);
             strcat(file_path, "/");
-		}
+        }
         strcat(file_path, argv[optind + i]);
 
         FILE *fp = fopen(file_path, "r");
