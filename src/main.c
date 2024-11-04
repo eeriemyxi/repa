@@ -186,6 +186,8 @@ void process_file(struct File *file) {
                 result.raw_sp_counter++;
             }
 
+        } else if (ch != '\'' && (ch < 'A' || (ch > 'Z' && ch < 'a') || ch > 'z')) {
+            add_word = true;
         } else {
             word[wi] = ch;
             wi += 1;
