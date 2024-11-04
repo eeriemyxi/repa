@@ -56,10 +56,11 @@ void initialize_result(struct Result *result) {
 }
 
 void print_usage(char *program, FILE *file) {
-    fprintf(file, "Usage: %s [-h] [-t n] [file...]\n", program);
-    fprintf(file, "(help): -h   -- show this message.\n");
-    fprintf(file, "(help): -a   -- don't append working directory when finding files.\n");
-    fprintf(file, "(help): -t N -- show top N results. can be 0.\n");
+    fprintf(file, LIGHT_YELLOW "Usage: %s [-h] [-t n] [file...]\n" RESET, program);
+    fprintf(file, LIGHT_BLUE "note: [file] can be - to read stdin \n" RESET);
+    fprintf(file, "help: -h   -- show this message.\n");
+    fprintf(file, "help: -a   -- don't append working directory when finding files.\n");
+    fprintf(file, "help: -t N -- show top N results. can be 0.\n");
 }
 
 struct File open_entire_file(FILE *fp) {
