@@ -294,7 +294,6 @@ int main(int argc, char *argv[]) {
         fclose(fp);
     }
 
-    // printf("Exiting...\n");
     free(Options.CWD);
     return 0;
 }
