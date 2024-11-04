@@ -6,12 +6,19 @@ A simple C program to view top N frequent words and total amount of lines & word
 
 # Usage
 ```
-myxi :: coding/c/repa ‹main*› » ./bin/repa -h
-Usage: ./bin/repa [-h] [-t n] [file...]
-(help): -h -- show this message.
-(help): -a -- don't append working directory when finding files.
-(help): -t N -- show top N results. can be 0.
+repa -h
 ```
+Show help.
+```
+repa file1.txt file2.txt
+```
+Read multiple files.
+```bash
+echo "hello world" | repa -
+echo "hi" | repa - file1.txt file2.txt
+repa - file2.txt < file1.txt
+```
+Read stdin.
 
 # Install
 > [!CAUTION]
