@@ -116,33 +116,34 @@ void print_frequent_words(HashMap *map) {
     // FIXME: optimise this mess
 
     Node *freqs = malloc(map->capacity * sizeof(Node));
-    memcpy(freqs, map->nodes, map->capacity);
+    int cap = 0;
+
+    for (size_t i=0; i < map->capacity; i++) {
+        if (map->nodes[i].key != NULL) {
+            freqs[cap] = map->nodes[i];
+            cap++;
+        }
+    }
+
+    int top_until = cap > Options.TOP_X ? Options.TOP_X : cap;
 
     qsort(freqs, map->length, sizeof(Node), _compare_pair);
     char *padding = "    ";
     int biggest = 0;
 
-    for (int i = 0; i < Options.TOP_X; i++) {
-        if (freqs[i].key == NULL) {
-            continue;
-        }
+    for (int i = 0; i < top_until; i++) {
         int len = strlen(freqs[i].key);
-        if (len > biggest)
-            biggest = len;
+        biggest = len > biggest ? len : biggest;
     }
 
     printf("🔸" LIGHT_PINK "Sorted Words by Frequency (" BOLD LIGHT_YELLOW
-           "Top %d" LIGHT_PINK "):\n" RESET,
+           "Top %d" LIGHT_PINK ")" RESET ":\n",
            Options.TOP_X);
 
-    for (int i = 0; i < Options.TOP_X; i++) {
-        if (freqs[i].key == NULL) {
-            continue;
-        }
+    for (int i = 0; i < top_until; i++) {
         char *padding2 = malloc(sizeof(char) * (biggest + 1));
         int _s = strlen(freqs[i].key);
-        for (int i = 0; i < biggest - _s; i++)
-            padding2[i] = ' ';
+        for (int i = 0; i < biggest - _s; i++) padding2[i] = ' ';
         padding2[biggest - _s] = '\0';
 
         printf(LIGHT_GREEN "%s%03d." BOLD LIGHT_YELLOW " %s%s  " RESET LIGHT_BLUE
