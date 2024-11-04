@@ -140,6 +140,8 @@ void print_frequent_words(HashMap *map) {
            "Top %d" LIGHT_PINK ")" RESET ":\n",
            Options.TOP_X);
 
+    if (top_until == 0) printf(LIGHT_RED "%sNo results.\n" RESET, padding);
+
     for (int i = 0; i < top_until; i++) {
         char *padding2 = malloc(sizeof(char) * (biggest + 1));
         int _s = strlen(freqs[i].key);
