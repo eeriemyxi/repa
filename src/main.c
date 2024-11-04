@@ -190,7 +190,7 @@ void process_file(struct File *file) {
             word[wi] = ch;
             wi += 1;
             if (wi >= (size_t) MAX_WORD_SIZE) {
-                printf("Max word length reached.");
+                fprintf(stderr, "ERROR: Max word length reached.\n");
                 return;
             }
         }
