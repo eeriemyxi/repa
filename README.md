@@ -35,7 +35,8 @@ make RELEASE=1
 # Command-line Arguments
 ```
 Usage: ./bin/repa [-h] [-t n] [file...]
-(help): -h   -- show this message.
-(help): -a   -- don't append working directory when finding files.
-(help): -t N -- show top N results. can be 0.
+note: [file] can be - to read stdin
+help: -h   -- show this message.
+help: -a   -- don't append working directory when finding files.
+help: -t N -- show top N results. can be 0.
 ```
