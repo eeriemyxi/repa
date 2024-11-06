@@ -1,6 +1,6 @@
 # Repa
 
-![](https://files.catbox.moe/vkmkno.png)
+![](https://vhs.charm.sh/vhs-5JBgxg0IBdWAH7IdMsREEB.gif)
 
 A simple C program to view top N frequent words and total amount of lines & words in files.
 
