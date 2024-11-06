@@ -136,8 +136,8 @@ void print_frequent_words(HashMap *map) {
         biggest = len > biggest ? len : biggest;
     }
 
-    printf("🔸" LIGHT_PINK "Sorted Words by Frequency (" BOLD LIGHT_YELLOW
-           "Top %d" LIGHT_PINK ")" RESET ":\n",
+    printf(DARK_YELLOW "❥ " LIGHT_GREEN "Sorted Words by Frequency " RESET "(" BOLD LIGHT_BLUE
+           "Top %d" RESET "):\n",
            Options.TOP_X);
 
     if (top_until == 0) printf(LIGHT_RED "%sNo results.\n" RESET, padding);
@@ -221,9 +221,9 @@ void process_file(struct File *file) {
     result.raw_sp_counter += result.space_counter;
     result.raw_nl_counter += result.line_counter;
 
-    printf("🔹" LIGHT_GREEN "Total Lines:  " LIGHT_CYAN "%d " RESET "(" LIGHT_BLUE "%d" RESET ")\n",
+    printf(DARK_YELLOW "❥ " LIGHT_GREEN "Total Lines:  " LIGHT_CYAN "%d " RESET "(" LIGHT_BLUE "%d" RESET ")\n",
            result.raw_nl_counter, result.line_counter);
-    printf("🔹" LIGHT_GREEN "Total Spaces: " LIGHT_CYAN "%d " RESET "(" LIGHT_BLUE "%d" RESET
+    printf(DARK_YELLOW "❥ " LIGHT_GREEN "Total Spaces: " LIGHT_CYAN "%d " RESET "(" LIGHT_BLUE "%d" RESET
            ")\n",
            result.raw_sp_counter, result.space_counter);
 
