@@ -2,6 +2,7 @@ RELEASE=0
 
 CC=gcc
 INCLUDE=-I./src
+INSTALL_DIR=$(HOME)/.local/bin
 
 ifeq ($(RELEASE),0)
     CFLAGS=$(INCLUDE) -Wall -Wextra -pedantic -g -finput-charset=utf-8
@@ -27,6 +28,13 @@ build/hashmap.o: build/
 clean:
 	rm -r build
 	rm -r bin
+	rm demo.gif
 
 run: repa
 	./bin/repa
+
+install: repa
+	cp ./bin/repa $(INSTALL_DIR)/repa
+
+demo: install
+	vhs demo.tape --publish
