@@ -39,6 +39,9 @@ make RELEASE=1
 > [!TIP]
 > You can just do `make` to make debug builds.
 
+> [!TIP]
+> You can specify `INSTALL_DIR` variable then do `make install` to install Repa in that directory. By default it is set to `$HOME/.local/bin`. Example: `sudo make install INSTALL_DIR=/usr/local/bin RELEASE=1`
+
 # Command-line Arguments
 ```
 Usage: ./bin/repa [-h] [-t n] [file...]
