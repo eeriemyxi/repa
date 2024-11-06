@@ -34,7 +34,7 @@ make RELEASE=1
 ./bin/repa -h
 ```
 > [!IMPORTANT]
-> You need a C compiler. I used GCC (Ubuntu 11.4.0-1ubuntu1~22.04 11.4.0) to build it.
+> You need a C compiler. I used GCC (`Ubuntu 11.4.0-1ubuntu1~22.04 11.4.0`) to build it.
 
 > [!TIP]
 > You can just do `make` to make debug builds.
