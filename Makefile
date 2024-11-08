@@ -7,7 +7,7 @@ INSTALL_DIR=$(HOME)/.local/bin
 ifeq ($(RELEASE),0)
     CFLAGS=$(INCLUDE) -Wall -Wextra -pedantic -g -finput-charset=utf-8
 else
-    CFLAGS=$(INCLUDE) -Wall -Wextra -pedantic -finput-charset=utf-8 -O3
+    CFLAGS=$(INCLUDE) -static -static-libgcc -Wall -Wextra -pedantic -finput-charset=utf-8 -O3
 endif
 
 repa: bin/ build/main.o build/hashmap.o
