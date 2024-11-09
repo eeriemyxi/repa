@@ -29,7 +29,8 @@ Read stdin.
 > I cannot promise to maintain this project. I am very new to C so there most likely are bugs and security vulnerabilities in the program.
 
 ```
-git clone --depth <REPO_URL>@main
+git clone --depth <REPO_URL>@main repa
+cd repa
 make RELEASE=1
 ./bin/repa -h
 ```
